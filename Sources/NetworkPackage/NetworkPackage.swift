@@ -2,6 +2,8 @@ import Foundation
 
 public struct NetworkPackage: NetworkService {
     
+    public init() {}
+    
     public func fetchData<T: Codable & Sendable>(
         from urlString: String,
         modelType: T.Type,
