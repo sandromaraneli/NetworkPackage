@@ -1,8 +1,6 @@
 import Foundation
 
-public struct NetworkPackage: Fetchable, Postable, Deletable {
-    
-    public init() {}
+public struct NetworkPackage: NetworkService {
     
     public func fetchData<T: Codable & Sendable>(
         from urlString: String,
