@@ -1,6 +1,6 @@
 import Foundation
 
-public struct NetworkPackage: NetworkService {
+public class NetworkPackage: NetworkService {
     
     public init() {}
     
