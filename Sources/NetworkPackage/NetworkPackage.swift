@@ -33,7 +33,7 @@ public class NetworkPackage: NetworkService {
                 }
             }
             
-            if httpResponse.statusCode != 200 {
+            if httpResponse.statusCode > 210 {
                 completion(.failure(NSError(domain: "com.example.Test", code: httpResponse.statusCode, userInfo: [NSLocalizedDescriptionKey: "Request failed with status code \(httpResponse.statusCode)"])))
                 return
             }
