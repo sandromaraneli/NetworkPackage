@@ -213,7 +213,15 @@ public class NetworkPackage: NetworkService {
                 return
             }
             
-            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+            if let httpResponse = response as? HTTPURLResponse {
+                print("HTTP Status Code: \(httpResponse.statusCode)")
+                
+                if let data = data, let responseBody = String(data: data, encoding: .utf8) {
+                    print("Response Body: \(responseBody)")
+                }
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode < 210 {
                 if let data = data {
                     do {
                         let decoder = JSONDecoder()
@@ -268,7 +276,15 @@ public class NetworkPackage: NetworkService {
                 return
             }
             
-            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+            if let httpResponse = response as? HTTPURLResponse {
+                print("HTTP Status Code: \(httpResponse.statusCode)")
+                
+                if let data = data, let responseBody = String(data: data, encoding: .utf8) {
+                    print("Response Body: \(responseBody)")
+                }
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode < 210 {
                 if let data = data {
                     do {
                         let decoder = JSONDecoder()
@@ -286,6 +302,8 @@ public class NetworkPackage: NetworkService {
         }
         task.resume()
     }
+    
+    
     
     public func deleteDataWithToken<T: Decodable>(
         urlString: String,
@@ -312,7 +330,15 @@ public class NetworkPackage: NetworkService {
                 return
             }
             
-            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+            if let httpResponse = response as? HTTPURLResponse {
+                print("HTTP Status Code: \(httpResponse.statusCode)")
+                
+                if let data = data, let responseBody = String(data: data, encoding: .utf8) {
+                    print("Response Body: \(responseBody)")
+                }
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode < 210 {
                 if let data = data {
                     do {
                         let decoder = JSONDecoder()
@@ -367,7 +393,15 @@ public class NetworkPackage: NetworkService {
                 return
             }
             
-            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+            if let httpResponse = response as? HTTPURLResponse {
+                print("HTTP Status Code: \(httpResponse.statusCode)")
+                
+                if let data = data, let responseBody = String(data: data, encoding: .utf8) {
+                    print("Response Body: \(responseBody)")
+                }
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode < 210 {
                 if let data = data {
                     do {
                         let decoder = JSONDecoder()
