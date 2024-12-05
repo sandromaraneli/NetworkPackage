@@ -24,4 +24,30 @@ public protocol NetworkService {
         modelType: T.Type,
         completion: @escaping @Sendable (Result<T, Error>) -> Void
     )
+    
+    func fetchDataWithToken<T: Decodable>(
+        urlString: String,
+        modelType: T.Type,
+        completion: @escaping @Sendable (Result<T, Error>) -> Void
+    )
+    
+    func patchDataWithToken<T: Encodable, U: Decodable>(
+        urlString: String,
+        modelType: T.Type,
+        body: T,
+        completion: @escaping @Sendable (Result<U, Error>) -> Void
+    )
+    
+    func postDataWithToken<T: Encodable, U: Decodable>(
+        urlString: String,
+        modelType: T.Type,
+        body: T,
+        completion: @escaping @Sendable (Result<U, Error>) -> Void
+    )
+    
+    func deleteDataWithToken<T: Decodable>(
+        urlString: String,
+        modelType: T.Type,
+        completion: @escaping @Sendable (Result<T, Error>) -> Void
+    )
 }
